@@ -1,0 +1,49 @@
+Ans-1
+
+-- Write your query below
+SELECT 
+    s.year,
+    s.semester,
+    COUNT(DISTINCT s.professor_id) AS no_of_professor
+FROM 
+    schedule s
+WHERE 
+    s.course_id BETWEEN 1 AND 10
+GROUP BY 
+    s.year, s.semester
+ORDER BY 
+    s.year ASC;
+
+Ans-2
+
+-- Write your query here
+SELECT *
+FROM product
+WHERE category IN ('furniture', 'laptop', 'mobile')
+AND price < 50000;
+
+Ans-3
+
+-- Write your query below
+SELECT 
+    e.FirstName,
+    e.LastName,
+    d.DepartmentName,
+    e.Salary
+FROM 
+    Employees e
+JOIN 
+    Departments d
+ON 
+    e.DepartmentID = d.DepartmentID
+WHERE 
+    e.Salary > (
+        SELECT 
+            AVG(Salary)
+        FROM 
+            Employees
+        WHERE 
+            DepartmentID = e.DepartmentID
+    )
+ORDER BY 
+e.Salary ASC;
