@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spring Flowers School - Student Management (Sprint 2)</title>
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #F7FBF8; 
+            scroll-behavior: smooth;
+        }
+
+       
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #4b0082; 
+            padding: 10px 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo-box {
+            color: #4A4A4A;
+            height: 100px;
+            width: 140px;
+            font-weight: bold;
+            border-radius: 10px;
+            font-size: 1.1em;
+        }
+
+        .menu-bar ul {
+            list-style: none;
+            display: flex; 
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-bar li a {
+            text-decoration: none;
+            color: white; 
+            padding: 10px 15px;
+            display: block;
+            font-weight: 500;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-bar li a:hover {
+            background-color: #7BC07B; 
+            border-radius: 4px;
+        }
+
+        .content-area > section {
+            display: none; 
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+            background-color: #FEEEEE; 
+            /* border: 1px solid #F5DDE0; */
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 30px;
+        }
+        
+        #welcome-view {
+             display: block;
+        }
+
+        #profile-view:target,
+        #timetable-view:target {
+            display: flex;
+            flex-direction: column; 
+            align-items: center;
+            text-align: center;
+        }
+
+        #profile-view:target ~ #welcome-view,
+        #timetable-view:target ~ #welcome-view {
+            display: none; 
+        }
+
+        .info-box {
+            display: flex;
+            gap: 30px;
+            margin-top: 20px;
+            align-items: flex-start;
+            width: 100%;
+        }
+
+        .student-image {
+            min-width: 120px;
+            height: 120px;
+            background-color: #FFEC99; 
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #4A4A4A;
+            border: 3px solid #7BC07B;
+            flex-shrink: 0;
+            font-size: 0.9em;
+        }
+
+        .student-details {
+            padding: 5px 0;
+            text-align: left;
+            line-height: 1.6;
+            color: #444;
+            flex-grow: 1; 
+        }
+        
+        .timetable-container {
+            overflow-x: auto; 
+            width: 100%;
+        }
+
+        .table thead th {
+            background-color: #7BC07B; 
+            color: white;
+            border-color: #7BC07B;
+        }
+        
+        .table-custom-striped > tbody > tr:nth-of-type(odd) > * {
+            background-color: #FCE6E6; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+           <img class="logo-box"src="https://spring-flowers-school.netlify.app/assests/logo.png" alt="">
+
+        <nav class="menu-bar">
+            <ul>
+                <li><a href="#welcome-view">Home</a></li> 
+                <li><a href="#profile-view" class="btn btn-sm">Student Profile</a></li>
+                <li><a href="#timetable-view" class="btn btn-sm">Time Table</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="container content-area">
+        
+        <section id="profile-view" class="content-box">
+            <h2 class="profile-title mb-4">Student Profile Information</h2>
+            
+            <div class="info-box d-flex flex-column flex-md-row">
+                    <img class="student-image mb-3 mb-md-0" src="profile.png" alt="Profile photo">
+              
+                <div class="student-details text-start">
+                    <p><strong>Name:</strong> Ritika Tripathi</p>
+                    <p><strong>ID:</strong> 011</p>
+                    <p><strong>Grade:</strong> 10th</p>
+                    <p><strong>D.O.B:</strong> 15/05/2007</p>
+                    <p><strong>Email:</strong> ritika@gmail.com</p>
+                </div>
+            </div>
+            <a href="#welcome-view" class="back-link mt-4">Back to Home</a>
+        </section>
+
+        
+        <section id="timetable-view" class="content-box">
+            <h2 class="profile-title mb-4">Class Time Table (Grade 10)</h2>
+            
+          
+            <div class="timetable-container">
+                <table class="table table-bordered table-custom-striped text-start">
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Monday</th>
+                            <th>Tuesday</th>
+                            <th>Wednesday</th>
+                            <th>Thursday</th>
+                            <th>Friday</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>9:00 - 10:00</td>
+                            <td>Maths (Algebra)</td>
+                            <td>Science (Physics)</td>
+                            <td>English (Grammar)</td>
+                            <td>History</td>
+                            <td>Maths (Geometry)</td>
+                        </tr>
+                        <tr>
+                            <td>10:00 - 11:00</td>
+                            <td>Science (Chem)</td>
+                            <td>Maths (Geometry)</td>
+                            <td>History</td>
+                            <td>Art</td>
+                            <td>P.E.</td>
+                        </tr>
+                        <tr>
+                            <td>11:00 - 11:30</td>
+                            <td colspan="5" class="text-center fw-bold">BREAK</td>
+                        </tr>
+                        <tr>
+                            <td>11:30 - 12:30</td>
+                            <td>Computer Science</td>
+                            <td>English (Lit)</td>
+                            <td>Science (Bio)</td>
+                            <td>Maths (Algebra)</td>
+                            <td>Geography</td>
+                        </tr>
+                        <tr>
+                            <td>12:30 - 1:30</td>
+                            <td>Optional Subject</td>
+                            <td>Library</td>
+                            <td>Computer Science</td>
+                            <td>Science (Chem)</td>
+                            <td>Assembly</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <a href="#welcome-view" class="back-link mt-4">Back to Home</a>
+        </section>
+
+
+        
+        <section id="welcome-view" class="content-box">
+            <h1>Welcome to the Spring Flowers Student Application!</h1>
+        </section>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

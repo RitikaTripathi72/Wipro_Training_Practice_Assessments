@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function addItem(){
+            var students = ["raj", "aman", "riya"];
+            var studentList = document.getElementById("stud");
+            for(var v = 0;v<students.length;v++){
+                var newLi = document.createElement("option");
+                newLi.innerHTML = students[v];
+                studentList.appendChild(newLi);
+            }
+        }
+    </script>
+</head>
+<body onload="addItem()">
+    <select name="stud" id="stud">
+        <option value="Tharun">Tharun</option>
+        <option value="Pavan">Pavan</option>
+        <option value="Nagaraju">Nagaraju</option>
+        <option value="Neha">Neha</option>
+        <option value="Krishna">Krishna</option>
+    </select>
+</body>
+</html>

@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body{
+    background-image: url("jaikishan-patel-2eMemvByB-8-unsplash.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* Header Section */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: whitesmoke;
+  padding: 12px 50px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+ header img{
+    height: 100px;
+    width: 120px;
+ }
+.logo {
+  height: 60px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #e91e63;
+}
+
+/* Welcome Section */
+.welcome-section {
+  background: url("assets/background.jpg") no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.welcome-box {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 40px 60px;
+  border-radius: 15px;
+}
+
+.welcome-box h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.welcome-box p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+.btn {
+  display: inline-block;
+  background: #e91e63;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #c2185b;
+}
+
+/* Profile Section */
+.profile-section {
+    background: whitesmoke;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+}
+
+.profile-card {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  height: 100%;
+  width: 350px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.profile-card img{
+    
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+}
+.profile-card p {
+ 
+  margin-bottom: 20px;
+  color: black;
+}
+
+.profile-card > div {
+    /* Container for the text details */
+    text-align: left;
+    width: 100%;
+    padding: 15px;
+    background-color: white; /* Clean background for text readability */
+    border-radius: 8px;
+    /* Soft shadow to lift the text box slightly */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08); 
+}
+
+.profile-card p {
+    /* Spacing between lines of information */
+    margin: 8px 0;
+    font-size: 1.1em;
+    line-height: 1.4; /* Improves readability */
+    border-bottom: 1px dashed #f0f0f0; /* Subtle separator */
+    padding-bottom: 4px;
+}
+
+.profile-card strong {
+    /* Theme color for labels (Name:, Class:, etc.) */
+    color: #444; /* Dark Blue for strong contrast */
+    font-weight: bold;
+    /* Optional: Ensure labels take up a fixed width for perfect alignment */
+    display: inline-block;
+    min-width: 80px; 
+}
